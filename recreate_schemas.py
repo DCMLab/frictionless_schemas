@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+import argparse
+import re
 
 import frictionless as fl
 import os
@@ -8,9 +9,11 @@ import ms3
 from tqdm.auto import tqdm
 
 
-def main():
+def main(regex: str = None):
     for facet in os.listdir(schema_path):
         if not os.path.isdir(facet):
+            continue
+        if regex and not re.search(regex, facet):
             continue
         files = os.listdir(facet)
         n_schemas = len(files)
@@ -46,10 +49,17 @@ def recreate_schema(
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Re-generates the frictionless schemas in the neighboring subfolders.')
+    parser.add_argument("regex", nargs="?", help="Optionally, only subpaths that match this regex will be processed.")
+    args = parser.parse_args()
+
     schema_path = os.path.normpath(os.path.split(__file__)[0])
     previous_working_directory = os.getcwd()
+    print(f"Entering {schema_path!r}...")
     os.chdir(schema_path)
-    main()
-    os.chdir(previous_working_directory)
+    main(args.regex)
+    if os.getcwd() != previous_working_directory:
+        print(f"Returning to {previous_working_directory!r}...")
+        os.chdir(previous_working_directory)
 
 
