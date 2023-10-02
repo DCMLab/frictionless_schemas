@@ -30,10 +30,6 @@ fields:
     type: number
     title: Duration in ♩
     description: A float corresponding to duration * 4
-  - name: volta
-    type: integer
-    title: Volta
-    description: Number of an ending bracket, given as integer.
   - name: mc_onset
     type: string
     title: Offset within Encoded Measure
@@ -102,11 +98,13 @@ fields:
     type: integer
     title: Octave
     description: Octave number where 4 is the middle octave (' in Helmholtz notation).
+  - name: tuning
+    type: string
   - name: chord_id
     type: integer
     title: Chord ID
     description: Row in the chords table.
 facet: notes
-identifier: a7xGmZRZtQpVhg
-filepath: notes/a7xGmZRZtQpVhg.schema.yaml
-used_in: 043 Liebster Gott, wenn werd ich sterben
+identifier: LrwwaYz80pokfw
+filepath: notes/LrwwaYz80pokfw.schema.yaml
+used_in: BWV1011_01_Prelude

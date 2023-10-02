@@ -26,10 +26,6 @@ fields:
       for addressability purposes.
     constraints:
       pattern: \d+(?:\/\d+)?
-  - name: duration_qb
-    type: number
-    title: Duration in ♩
-    description: A float corresponding to duration * 4
   - name: mc_onset
     type: string
     title: Offset within Encoded Measure
@@ -61,6 +57,11 @@ fields:
     type: string
     title: Label
     description: String corresponding to the entire annotation label.
+  - name: alt_label
+    type: string
+    title: Alternative Label
+    description: Another interpretation of the same chord which the annotator finds
+      equally or slightly less convincing.
   - name: globalkey
     type: string
     title: Global Key
@@ -104,8 +105,6 @@ fields:
     description: The Roman numeral following the / in applied chords. Can itself include
       a /. For example, V/V if the label pertains to the major scale on the second
       scale degree.
-  - name: pedalend
-    type: string
   - name: cadence
     type: string
     title: Cadence
@@ -152,6 +151,6 @@ fields:
     description: Loweste note designated by the chord label, expressed as fifth intervals
       relative to the local tonic.
 facet: harmonies
-identifier: WYVXgymr3VnUkA
-filepath: harmonies/WYVXgymr3VnUkA.schema.yaml
-used_in: 12.01_Toccata_avanti_la_Messa_della_Domenica
+identifier: o_yPp1So29ABHw
+filepath: harmonies/o_yPp1So29ABHw.schema.yaml
+used_in: 12.03_Kyrie,_Tema_A

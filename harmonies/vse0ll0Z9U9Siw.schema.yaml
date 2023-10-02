@@ -26,10 +26,6 @@ fields:
       for addressability purposes.
     constraints:
       pattern: \d+(?:\/\d+)?
-  - name: duration_qb
-    type: number
-    title: Duration in ♩
-    description: A float corresponding to duration * 4
   - name: mc_onset
     type: string
     title: Offset within Encoded Measure
@@ -61,6 +57,11 @@ fields:
     type: string
     title: Label
     description: String corresponding to the entire annotation label.
+  - name: alt_label
+    type: string
+    title: Alternative Label
+    description: Another interpretation of the same chord which the annotator finds
+      equally or slightly less convincing.
   - name: globalkey
     type: string
     title: Global Key
@@ -120,14 +121,6 @@ fields:
     title: Chord Type
     description: '''M'', ''m'', ''o'', ''+'', ''mm7'', ''Mm7'', ''MM7'', ''mM7'',
       ''o7'', ''%7'', ''+7'', ''+M7'''
-  - name: globalkey_is_minor
-    type: boolean
-    title: Global Key is Minor
-    description: Boolean that is 1 if the piece is in minor and 0 if it is in major.
-  - name: localkey_is_minor
-    type: boolean
-    title: Local Key is Minor
-    description: Boolean that is 1 if the local key is minor and 0 if it is major.
   - name: chord_tones
     type: string
     title: Chord Tones
@@ -151,7 +144,11 @@ fields:
     title: Bass Note
     description: Loweste note designated by the chord label, expressed as fifth intervals
       relative to the local tonic.
+  - name: duration_qb
+    type: number
+    title: Duration in ♩
+    description: A float corresponding to duration * 4
 facet: harmonies
-identifier: WYVXgymr3VnUkA
-filepath: harmonies/WYVXgymr3VnUkA.schema.yaml
-used_in: 12.01_Toccata_avanti_la_Messa_della_Domenica
+identifier: vse0ll0Z9U9Siw
+filepath: harmonies/vse0ll0Z9U9Siw.schema.yaml
+used_in: 12.33_Canzon_quarti_toni_dopo_il_post_Comune
