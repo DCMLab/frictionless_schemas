@@ -33,6 +33,7 @@ def recreate_schema(
     schema_identifier = ms3.get_truncated_hash(column_names)
     schema_filename = f"{schema_identifier}.schema.yaml"
     schema_filepath = f"{facet}/{schema_filename}"  # for URL & uniform filepath
+    custom_fields = {k: v for k, v in schema.custom.items() if k not in ('facet', 'identifier', 'filepath')}
     descriptor = ms3.make_frictionless_schema_descriptor(
         column_names=column_names,
         primary_key=schema.primary_key,
@@ -40,6 +41,7 @@ def recreate_schema(
         facet=facet,
         identifier=schema_identifier,
         filepath=schema_filepath,
+        **custom_fields,
     )
     new_filepath = os.path.join(facet, schema_filename)
     fl.Schema(descriptor).to_yaml(new_filepath)
